@@ -1,4 +1,5 @@
 package pl.allegro.restapi.main.pojo.parameters;
+//Może usunąć pakiet parameters i wszystkie klasy przenieść do pojo?
 
 import java.util.List;
 

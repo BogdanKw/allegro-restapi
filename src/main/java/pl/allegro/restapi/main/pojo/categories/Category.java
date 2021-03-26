@@ -47,5 +47,5 @@ public class Category {
     public void setParent(Parent parent) {
         this.parent = parent;
     }
-
+// niepotrzebny odstęp
 }

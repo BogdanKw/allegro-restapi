@@ -7,7 +7,7 @@ public class Parameter {
     private String type;
     private Boolean required;
     private Boolean requiredForProduct;
-    private Object unit;
+    private Object unit; //Raczej nie powinieneś nigdzie używać klasy Object. Już nie będę na to zwracał uwagi, ale to generalna zasada.
     private Options options;
     private Restrictions restrictions;
 

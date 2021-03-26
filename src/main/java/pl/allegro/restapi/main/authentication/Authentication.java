@@ -10,6 +10,7 @@ import static pl.allegro.restapi.main.authentication.ClientCredentials.CLIENT_SE
 public class Authentication {
 
     public static String getAccessToken() {
+        //Nie wiem za bardzo co robi ConfigFactoy, ale czy trzeba tworzyć EnvironmentConfig za każdym razem jak chcemy pobrać accessToken? Może wystarczy to zrobić raz w jakimś singletonie?
         EnvironmentConfig environmentConfig = ConfigFactory.create(EnvironmentConfig.class);
 
         String accessToken = given()

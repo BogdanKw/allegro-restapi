@@ -2,6 +2,7 @@ package pl.allegro.restapi.main.pojo.errors;
 
 public class Error {
 
+    // Czemu path i details są typu Object? Czy tu mogą być faktycznie instancje różnych klas? Może trzeba dla nich stworzyć interfejsy (jeśli mają ze sobą coś wspólnego), albo użyć genericów 
     private String code;
     private Object details;
     private String message;

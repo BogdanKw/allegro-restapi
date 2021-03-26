@@ -7,19 +7,28 @@ import static io.restassured.RestAssured.given;
 import static pl.allegro.restapi.main.authentication.ClientCredentials.CLIENT_ID;
 import static pl.allegro.restapi.main.authentication.ClientCredentials.CLIENT_SECRET;
 
+// skoro jest tylko metoda statyczna, to nie powinniśmy móc tworzyć instancji klasy
 public class Authentication {
 
     public static String getAccessToken() {
         EnvironmentConfig environmentConfig = ConfigFactory.create(EnvironmentConfig.class);
 
-        String accessToken = given()
+        //jakoś inaczej wcięcia bym porobił. Nie wiem czy akurat tak jest dobrze, bo nie wiem do czego np. contentType się odnosi, czy do auth, czy do given
+        return 
+            given()
                 .formParam("grant_type", "client_credentials")
-                .auth().preemptive().basic(CLIENT_ID, CLIENT_SECRET)
+                .auth()
+                    .preemptive()
+                    .basic(CLIENT_ID, CLIENT_SECRET)
                 .contentType("application/x-www-form-urlencoded")
-                .when()
+            .when()
                 .post(environmentConfig.tokenUri())
-                .then().extract().jsonPath().getString("access_token");
-        return accessToken;
+            .then()
+                .extract()
+                .jsonPath()
+                .getString("access_token");
+        //tworzenie zmiennej accessToken wydaje się niepotrzebne, od razu można zwrócić wartość.
+        //return accessToken;
     }
 
 }

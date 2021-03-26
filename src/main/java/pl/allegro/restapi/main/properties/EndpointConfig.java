@@ -1,4 +1,5 @@
 package pl.allegro.restapi.main.properties;
+//Może pakiet nazwać config zamiast properties?
 
 import org.aeonbits.owner.Config;
 

@@ -16,6 +16,8 @@ public class GetCategoryByIdTest extends TestBase {
 
     @Test
     public void givenRandomCategoryFromCategoriesWhenGetCategoryThenReturnCategory() {
+        //Nie znam tego narzędzia do testowania, ale wydaje mi się, że cały kod powinien się znaleźć w sekcjach given, when, then.
+        // W when masz to, co testujesz (czyli np. wywołanie jakiejś metody), w given wszystko co potrzebujesz do wywołania when, a w then wszystkie assercje i wszystko co jest po when
         Categories expectedCategories = given()
                 .when().get(endpointConfig.getAllCategoriesPath())
                 .then().statusCode(HttpStatus.SC_OK).extract().as(Categories.class);
@@ -32,7 +34,7 @@ public class GetCategoryByIdTest extends TestBase {
 
         String expectedCategoryId = expectedCategory.getId();
 
-
+        // W jednym teście tesujesz ylko jedną rzecz. Jeśli widzisz potrzebę drugiego testu, to robisz oddzielny o w sekcji given przygotowujesz wszystko, co jest Ci do tego testu potrzebne.
         Category category = given()
                 .when().get(endpointConfig.getCategoryByIdPath(), expectedCategoryId)
                 .then().statusCode(HttpStatus.SC_OK).extract().as(Category.class);

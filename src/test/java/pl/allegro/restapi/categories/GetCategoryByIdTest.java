@@ -15,6 +15,10 @@ import static pl.allegro.restapi.properties.EndpointManager.getEndpointConfig;
 
 public class GetCategoryByIdTest extends TestBase {
 
+    // Takie trochę podstępne te testy. Napisać je porządnie to trochę czasu może zająć. 
+    // Tutaj bym się przyczepił do przypadkowości testu. Jednym razem może przejść, a innym nie, w zależności od randomowej wartości.
+    // Też miałbym obiekcje odnośnie opierania testów na podstawie danych pobranych z wszystkich kategorii. A jeśli tam też jest błąd?
+    // Jak na moje powinna być jakaś lista kategorii do przetestowania i wprost wpisane oczekiwane wartości i z nimi dopiero można robić porównanie. Ale nigdy nie czytałem żadnego podręcznika prawidłowego testowania, więc nie wiem jakie są podejścia.
     @Test
     public void givenRandomCategoryFromCategoriesWhenGetCategoryThenReturnCategory() {
         //given

@@ -18,6 +18,8 @@ import static pl.allegro.restapi.properties.EndpointManager.getEndpointConfig;
 
 public class GetParametersByCategoryIdTest extends TestBase {
 
+    // Tutaj podobnie jak w innych miejscach nie opierałbym się na liczbie randomowej, tylko szukał po konkretnych id-kach wcześniej zdefiniowanych. Nie wiem jak testng, ale spock czy junit potrafią powtarzać ten sam test wielokrotnie dla różnych parametrów, czyli można mieć zdefiniowaną listę id-ków i oczekiwanych parametrów i wykonać ten test wielokrotnie.
+    // Tak mi przyszło do głowy, że ja może przyjąłem złe założenia. Bo ja zakładam że test robiony jest przez allegro i z dokumentacji wiemy, co powinno się znaleźć w różnych kategoriach. A jeśli im chodziło, że my testujemy to api jako klient i nie wiemy co będzie zwrócone? Nie wiem za bardzo jaka była koncepcja.
     @Test
     public void givenCategoryIdWhenGetParametersThenReturnListOfParameters() {
         Categories categories = given()

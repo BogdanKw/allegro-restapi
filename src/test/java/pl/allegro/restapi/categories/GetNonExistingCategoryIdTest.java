@@ -18,6 +18,9 @@ import static pl.allegro.restapi.properties.EndpointManager.getEndpointConfig;
 
 public class GetNonExistingCategoryIdTest extends TestBase {
 
+    // Tu mi się też nie podoba poszukiwania id które nie istnieje. Chyba powinniśmy mieć zdefiniowane takie id, np. w pliku konfiguracyjnym, i po takim id wołać.
+    // Tutaj mogę sobie wyobrazić różne błędy, np. zły format id niezgodny z UUID może zwrócić jakiś błąd parsowania, albo jakiś bardzo długi numer.
+    // Jak na moje to w jednym pliku spokojnie może być wiele powiązanych testów
     @Test
     public void givenNonExistingCategoryWhenGetCategoryThenNotFoundReturn(){
         Categories categories = given()
